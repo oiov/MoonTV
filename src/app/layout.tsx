@@ -60,7 +60,6 @@ export default async function RootLayout({
   return (
     <html lang='zh-CN' suppressHydrationWarning>
       <head>
-        <link rel="preload" href="https://uv.do/s/sextv" as="fetch" />
         {/* 将配置序列化后直接写入脚本，浏览器端可通过 window.RUNTIME_CONFIG 获取 */}
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script
@@ -69,6 +68,13 @@ export default async function RootLayout({
           }}
         />
       </head>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-KPEYCF67Y5"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-KPEYCF67Y5');
+        </script>
       <body
         className={`${inter.className} min-h-screen bg-white text-gray-900 dark:bg-black dark:text-gray-200`}
       >
